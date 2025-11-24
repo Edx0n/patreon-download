@@ -1,0 +1,44 @@
+# Diretório de downloads
+downloads/*
+!downloads/.gitkeep
+*.sqlite
+*.sqlite3
+
+# Arquivos de log
+*.log
+logs/
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.part
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Arquivos de configuração pessoal
+*.local
+.env
+.env.local
+
+# Arquivos do IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Arquivos de backup
+*.bak
+*.backup
+
+# Arquivos com informações pessoais
+RESUMO_DOWNLOADS.md
+COMANDO_PRONTO.txt
+urls.txt
+
+# Arquivos problemáticos do Windows
+nul
+

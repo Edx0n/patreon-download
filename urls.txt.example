@@ -1,0 +1,10 @@
+# Arquivo de exemplo para download múltiplo
+# Coloque uma URL por linha
+# Linhas começando com # são ignoradas (comentários)
+
+# Exemplo de URLs do Patreon:
+# https://www.patreon.com/posts/exemplo-123456789
+# https://www.patreon.com/posts/outro-exemplo-987654321
+
+# Para usar, renomeie este arquivo para urls.txt e adicione suas URLs
+
