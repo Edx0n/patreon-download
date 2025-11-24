@@ -1,19 +1,19 @@
 # patreon-download
 
-Scripts auxiliares para facilitar o uso do [patreon-dl](https://github.com/patrickkfkan/patreon-dl) e baixar conteúdo do Patreon.
+Helper scripts to facilitate the use of [patreon-dl](https://github.com/patrickkfkan/patreon-dl) and download content from Patreon.
 
-## 🙏 Créditos
+## 🙏 Credits
 
-Este projeto utiliza e depende do excelente trabalho de [@patrickkfkan](https://github.com/patrickkfkan) e seu projeto [patreon-dl](https://github.com/patrickkfkan/patreon-dl). Todos os créditos pela ferramenta principal de download vão para ele.
+This project uses and depends on the excellent work of [@patrickkfkan](https://github.com/patrickkfkan) and his [patreon-dl](https://github.com/patrickkfkan/patreon-dl) project. All credits for the main download tool go to him.
 
-## 📋 Pré-requisitos
+## 📋 Prerequisites
 
-- **Node.js** v20+ instalado
-- **patreon-dl** instalado globalmente:
+- **Node.js** v20+ installed
+- **patreon-dl** installed globally:
   ```bash
   npm install -g patreon-dl
   ```
-- **FFmpeg** (requerido para vídeos):
+- **FFmpeg** (required for videos):
 
   ```bash
   # Windows (via Chocolatey)
@@ -29,97 +29,97 @@ Este projeto utiliza e depende do excelente trabalho de [@patrickkfkan](https://
   brew install ffmpeg
   ```
 
-## 🚀 Instalação
+## 🚀 Installation
 
-1. Clone este repositório:
+1. Clone this repository:
 
    ```bash
-   git clone https://github.com/seu-usuario/patreon-download.git
+   git clone https://github.com/Edx0n/patreon-download.git
    cd patreon-download
    ```
 
-2. (Opcional) Torne os scripts executáveis (Linux/Mac):
+2. (Optional) Make scripts executable (Linux/Mac):
    ```bash
    chmod +x download.sh
    ```
 
-## 📖 Como Usar
+## 📖 Usage
 
-### Download Único
+### Single Download
 
 **Windows:**
 
 ```bash
-download.bat "https://www.patreon.com/posts/exemplo-123456789"
+download.bat "https://www.patreon.com/posts/example-123456789"
 ```
 
 **Linux/Mac:**
 
 ```bash
-./download.sh "https://www.patreon.com/posts/exemplo-123456789"
+./download.sh "https://www.patreon.com/posts/example-123456789"
 ```
 
-### Download com Cookie (Conteúdo Patron-Only)
+### Download with Cookie (Patron-Only Content)
 
-Para baixar conteúdo exclusivo de patrocinadores, você precisa do cookie de sessão:
+To download exclusive patron content, you need the session cookie:
 
-1. Acesse https://www.patreon.com e faça login
-2. Abra as Ferramentas de Desenvolvedor (F12)
-3. Vá para a aba **Application** (Chrome) ou **Storage** (Firefox)
-4. No menu lateral, clique em **Cookies** → `https://www.patreon.com`
-5. Procure pelo cookie chamado `session_id`
-6. Copie o **Value** completo
+1. Visit https://www.patreon.com and log in
+2. Open Developer Tools (F12)
+3. Go to the **Application** tab (Chrome) or **Storage** tab (Firefox)
+4. In the sidebar, click **Cookies** → `https://www.patreon.com`
+5. Look for the cookie named `session_id`
+6. Copy the complete **Value**
 
 **Windows:**
 
 ```bash
-download.bat "https://www.patreon.com/posts/exemplo-123456789" "SEU_COOKIE"
+download.bat "https://www.patreon.com/posts/example-123456789" "YOUR_COOKIE"
 ```
 
 **Linux/Mac:**
 
 ```bash
-./download.sh "https://www.patreon.com/posts/exemplo-123456789" "SEU_COOKIE"
+./download.sh "https://www.patreon.com/posts/example-123456789" "YOUR_COOKIE"
 ```
 
-### Download Múltiplo
+### Multiple Downloads
 
-1. Crie um arquivo `urls.txt` com uma URL por linha:
+1. Create a `urls.txt` file with one URL per line:
 
    ```txt
-   https://www.patreon.com/posts/exemplo-123456789
-   https://www.patreon.com/posts/outro-exemplo-987654321
+   https://www.patreon.com/posts/example-123456789
+   https://www.patreon.com/posts/another-example-987654321
    ```
 
-2. Execute o script:
+2. Run the script:
 
    ```bash
    # Windows
-   download-multiple.bat "SEU_COOKIE"
+   download-multiple.bat "YOUR_COOKIE"
 
-   # Linux/Mac (se disponível)
-   ./download-multiple.sh "SEU_COOKIE"
+   # Linux/Mac (if available)
+   ./download-multiple.sh "YOUR_COOKIE"
    ```
 
-### Especificar Caminho do FFmpeg
+### Specify FFmpeg Path
 
-Se o FFmpeg não estiver no PATH do sistema:
+If FFmpeg is not in your system PATH:
 
 **Windows:**
 
 ```bash
-download.bat "URL" "COOKIE" "C:\caminho\para\ffmpeg.exe"
+download.bat "URL" "COOKIE" "C:\path\to\ffmpeg.exe"
 ```
 
 **Linux/Mac:**
 
 ```bash
-./download.sh "URL" "COOKIE" "/caminho/para/ffmpeg"
+./download.sh "URL" "COOKIE" "/path/to/ffmpeg"
 ```
 
-## 📁 Estrutura de Diretórios
+## 📁 Directory Structure
 
-O conteúdo será baixado na seguinte estrutura:
+Content will be downloaded in the following structure:
 
 ```
 downloads/
@@ -133,54 +133,54 @@ downloads/
                 └── ...
 ```
 
-## 🛠️ Opções Avançadas
+## 🛠️ Advanced Options
 
-### Usar patreon-dl Diretamente
+### Use patreon-dl Directly
 
-Para mais opções, consulte a [documentação oficial do patreon-dl](https://github.com/patrickkfkan/patreon-dl):
+For more options, see the [official patreon-dl documentation](https://github.com/patrickkfkan/patreon-dl):
 
 ```bash
 patreon-dl --help
 ```
 
-### Modo Dry-Run (Teste sem Baixar)
+### Dry-Run Mode (Test without Downloading)
 
 ```bash
 patreon-dl --dry-run -o "./downloads" "URL"
 ```
 
-### Nível de Log
+### Log Level
 
 ```bash
 patreon-dl -l debug -o "./downloads" "URL"
 ```
 
-## 📝 Formatos de URL Suportados
+## 📝 Supported URL Formats
 
-- Post único: `https://www.patreon.com/posts/exemplo-123456789`
-- Posts do criador: `https://www.patreon.com/criador/posts`
-- Coleção: `https://www.patreon.com/collection/123456`
-- Produto: `https://www.patreon.com/criador/shop/produto-123456`
+- Single post: `https://www.patreon.com/posts/example-123456789`
+- Creator posts: `https://www.patreon.com/creator/posts`
+- Collection: `https://www.patreon.com/collection/123456`
+- Product: `https://www.patreon.com/creator/shop/product-123456`
 
-## 🔒 Segurança
+## 🔒 Security
 
-- **Nunca compartilhe seu cookie de sessão**
-- O cookie permite acesso à sua conta do Patreon
-- Mantenha o arquivo `urls.txt` privado se contiver URLs de conteúdo exclusivo
+- **Never share your session cookie**
+- The cookie provides access to your Patreon account
+- Keep the `urls.txt` file private if it contains URLs for exclusive content
 
-## 📖 Documentação Adicional
+## 📖 Additional Documentation
 
-- [Repositório oficial do patreon-dl](https://github.com/patrickkfkan/patreon-dl)
-- [Como obter Cookie](https://github.com/patrickkfkan/patreon-dl/wiki/How-to-obtain-Cookie)
+- [Official patreon-dl repository](https://github.com/patrickkfkan/patreon-dl)
+- [How to obtain Cookie](https://github.com/patrickkfkan/patreon-dl/wiki/How-to-obtain-Cookie)
 
-## 🤝 Contribuindo
+## 🤝 Contributing
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.
+Contributions are welcome! Feel free to open issues or pull requests.
 
-## 📄 Licença
+## 📄 License
 
-Este projeto é fornecido como está. O patreon-dl é licenciado sob MIT License.
+This project is provided as-is. patreon-dl is licensed under MIT License.
 
-## ⚠️ Aviso Legal
+## ⚠️ Legal Notice
 
-Este projeto é apenas uma ferramenta auxiliar para o patreon-dl. Use com responsabilidade e respeite os termos de serviço do Patreon e os direitos autorais dos criadores de conteúdo.
+This project is just a helper tool for patreon-dl. Use responsibly and respect Patreon's terms of service and content creators' copyrights.
